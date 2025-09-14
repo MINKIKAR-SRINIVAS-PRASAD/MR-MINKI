@@ -105,11 +105,11 @@ body {
 /* Animations */
 @keyframes womanEnter {
   from { transform: translateX(-200px); opacity: 0; }
-  to { transform: translateX(600px); opacity: 1; }   /* closer */
+  to { transform: translateX(100px); opacity: 1; }   /* closer */
 }
 @keyframes manEnter {
   from { transform: translateX(200px); opacity: 0; }
-  to { transform: translateX(-700px); opacity: 1; }  /* closer */
+  to { transform: translateX(-100px); opacity: 1; }  /* closer */
 }
 
 @keyframes kneel {
