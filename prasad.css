@@ -1,0 +1,130 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to top, #cf7a9dbb, #e08abf);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+/* Scene */
+.scene {
+  width: 100%;
+  height: 250px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  position: relative;
+  padding: 0 50px;
+}
+
+/* Characters */
+.woman, .man {
+  position:center;
+  width: 80px;
+  height: 200px;
+  text-align: center;
+  opacity: 0;
+}
+
+/* Shared body parts */
+.woman .head, .man .head {
+  width: 60px;
+  height: 60px;
+  background: #f9c9b6;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+.woman .body, .man .body {
+  width: 25px;
+  height: 100px;
+  background: #333;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+/* Woman kneeling
+.woman .leg {
+  width: 40px;
+  height: 15px;
+  background: #333;
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+  border-radius: 5px;
+  transform: rotate(-30deg);
+  opacity: 0;
+  animation: kneel 1s ease forwards 5s;
+}
+.men .leg {
+  width: 40px;
+  height: 15px;
+  background: #333;
+  position: center;
+  bottom: 0;
+  left: 20px;
+  border-radius: 5px;
+} */
+/* Woman arm with rose */
+.woman .arm {
+  width: 60px;
+  height: 10px;
+  background: #f9c9b6;
+  position: absolute;
+  top: 120px;
+  left: 40px;
+  border-radius: 5px;
+  transform-origin: left center;
+  transform: rotate(0deg);
+  opacity: 0;
+  animation: offerRose 1s ease forwards 4s;
+}
+.rose {
+  position: absolute;
+  top: 110px;
+  left: 95px;
+  font-size: 28px;
+  opacity: 0;
+  animation: showRose 1s ease forwards 4.5s;
+}
+
+/* Text */
+.text {
+  font-size: 32px;
+  color: #d6336c;
+  font-weight: bold;
+  margin-top: 20px;
+  opacity: 0;
+  animation: fadeIn 2s ease forwards 5s;
+}
+
+/* Animations */
+@keyframes womanEnter {
+  from { transform: translateX(-200px); opacity: 0; }
+  to { transform: translateX(600px); opacity: 1; }   /* closer */
+}
+@keyframes manEnter {
+  from { transform: translateX(200px); opacity: 0; }
+  to { transform: translateX(-700px); opacity: 1; }  /* closer */
+}
+
+@keyframes kneel {
+  to { opacity: 1; }
+}
+@keyframes offerRose {
+  to { transform: rotate(-25deg); opacity: 1; }
+}
+@keyframes showRose {
+  to { opacity: 1; }
+}
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+/* Apply entrance */
+.woman { animation: womanEnter 3s ease forwards 1s; }
+.man { animation: manEnter 3s ease forwards 1s; }
